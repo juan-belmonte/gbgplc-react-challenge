@@ -18,23 +18,23 @@ export class Parent extends React.Component<Props, State> {
   }
 
   componentDidMount() {
-    console.log('Bound to document scroll event');
+    console.log('[Class comp] Bound to document scroll event');
     window.document.addEventListener('scroll', this.onPageScroll);
   }
 
   componentWillUnmount() {
-    console.log('Unbound from document scroll event');
+    console.log('[Class comp] Unbound from document scroll event');
     window.document.removeEventListener('scroll', this.onPageScroll);
   }
 
   onButtonClicked(evt: Event) {
     evt.stopPropagation();
-    console.log(`Button clicked! Incrementing counter.`);
+    console.log(`[Class comp] Button clicked! Incrementing counter.`);
     this.setState({ clickCount: this.state.clickCount + 1 });
   }
 
   onPageScroll(evt: Event) {
-    console.log(`Page scrolled! Resetting counter.`);
+    console.log(`[Class comp] Page scrolled! Resetting counter.`);
     this.setState({ clickCount: 0 });
   }
 
